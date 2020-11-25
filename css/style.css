@@ -543,7 +543,8 @@ header .navbar .nav-item .nav-link:hover {
 	position: relative;
 	width: 100%;
 	height: auto;
-	background-image: url(../images/appointment-bg.jpg);
+	/* background-image: url(../images/appointment-bg.jpg); */
+	background-color: #f1ad1e;
 	background-size: cover;
 	padding: 130px 0;
 }
