@@ -1170,7 +1170,7 @@ footer .fa-arrow-up:hover {
 	header .side-bar {
 		width: 80px;
 		height: 78px;
-		background-color: #fdb714;
+		background-color: transparent;
 	}
 
 	header .navbar .nav-item .nav-link {
