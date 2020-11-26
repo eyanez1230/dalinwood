@@ -96,9 +96,10 @@ hr {
 
 /*-- header start --*/
 header.active {
-	background-color: transparent;
+	background-color: #000;
 	/* box-shadow: 0 0 4px rgba(0, 0, 0, 0.18); */
 	margin-top: 0;
+	padding-bottom:122px;
 }
 
 header {
@@ -113,7 +114,7 @@ header {
 header .side-bar {
 	width: 240px;
 	height: 78px;
-	background-color: transparent;
+	background-color: #000;
 }
 
 header .navbar-brand {
@@ -1164,7 +1165,7 @@ footer .fa-arrow-up:hover {
 	}
 
 	header .navbar-brand img {
-		width: 65%;
+		width: 45%;
 		margin-left: 20px;
 	}
 
