@@ -96,8 +96,8 @@ hr {
 
 /*-- header start --*/
 header.active {
-	background-color: #f0f0f0;
-	box-shadow: 0 0 4px rgba(0, 0, 0, 0.18);
+	background-color: transparent;
+	/* box-shadow: 0 0 4px rgba(0, 0, 0, 0.18); */
 	margin-top: 0;
 }
 
@@ -245,7 +245,7 @@ header .navbar .nav-item .nav-link:hover {
 	font-size: 20px;
 	color: #ffffff;
 	font-weight: bold;
-	background-color: #fdb714;
+	background-color: #4d8d35;
 	border-radius: 60px;
 	padding: 19px 36px;
 	text-align: center;
@@ -488,7 +488,7 @@ header .navbar .nav-item .nav-link:hover {
 
 .client-testimonials .client-testimonials-inner h5 {
 	font-size: 20px;
-	color: #fdb714;
+	color: #4d8d35;
 	font-weight: bold;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -544,7 +544,7 @@ header .navbar .nav-item .nav-link:hover {
 	width: 100%;
 	height: auto;
 	/* background-image: url(../images/appointment-bg.jpg); */
-	background-color: #f1ad1e;
+	background-color: #4d8d35;
 	background-size: cover;
 	padding: 130px 0;
 }
@@ -673,7 +673,7 @@ header .navbar .nav-item .nav-link:hover {
 }
 
 .construction-projects .carousel-indicators .active {
-	background-color: #fdb714;
+	background-color: #4d8d35;
 }
 
 /*-- construction-projects end --*/
@@ -845,7 +845,7 @@ header .navbar .nav-item .nav-link:hover {
 	font-weight: bold;
 	padding: 17px 35px;
 	text-align: center;
-	background-color: #fdb714;
+	background-color: #4d8d35;
 	border: 0;
 	border-radius: 60px;
 	margin-top: 9px;
@@ -919,8 +919,8 @@ header .navbar .nav-item .nav-link:hover {
 }
 
 .contact h5 a:hover {
-	color: #fdb714;
-	border-bottom: 1px solid #fdb714;
+	color: #4d8d35;
+	border-bottom: 1px solid #4d8d35;
 	display: inline-block;
 }
 
@@ -942,7 +942,7 @@ header .navbar .nav-item .nav-link:hover {
 }
 
 .contact span i:hover {
-	color: #fdb714;
+	color: #4d8d35;
 }
 
 /*-- contact-us end --*/
@@ -1040,7 +1040,7 @@ footer .fa-arrow-up:hover {
 }
 
 #myBtn:hover {
-	background-color: #fdb714;
+	background-color: #4d8d35;
 }
 
 #myBtn i {
