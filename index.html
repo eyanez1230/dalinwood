@@ -558,6 +558,13 @@
 			<div class="alert alert-success alert-dismissible fade show" id="messageSuccess" role="alert">
 				Message submitted successfully! Please allow up to 24 hours to review your request.
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="alert alert-danger alert-dismissible fade show" id="errorMessage" role="alert">
+				There was an error processing your request. Please contact us directly at (626) 570-5408 or dalinwood@hotmail.com 
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
 			  </div>
@@ -730,6 +737,7 @@
 <script>
 	//Init
 	$("#messageSuccess").hide();
+	$("#errorMessage").hide();
 
 	function getFormData($form) {
 		var unindexed_array = $form.serializeArray();
@@ -765,7 +773,11 @@
 		let response = await sendEmail(data);
 
 		if (response.status === 200) {
+			// Handle success
 			$("#messageSuccess").fadeIn();
+		} else {
+			// Handle error
+			$("#errorMessage").fadeIn();
 		}
 	});
 
