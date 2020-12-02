@@ -827,6 +827,7 @@ header .navbar .nav-item .nav-link:hover {
 	border-radius: 0;
 	border-bottom: 3px solid #ffffff;
 	background-color: unset;
+	color: #fff;
 }
 
 .form-control:focus {
