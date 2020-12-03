@@ -562,34 +562,58 @@
 				</button>
 			</div>
 
-			<div class="alert alert-danger alert-dismissible fade show" id="errorMessage" role="alert">
-				There was an error processing your request. Please contact us directly at (626) 570-5408 or dalinwood@hotmail.com 
+			<div class="alert alert-danger alert-dismissible fade show" id="solveCaptchaError" role="alert">
+				Please solve the captcha
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
+					<span aria-hidden="true">&times;</span>
 				</button>
-			  </div>
+			</div>
+
+			<div class="alert alert-danger alert-dismissible fade show" id="validationError" role="alert">
+				Please address the validation errors
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="alert alert-danger alert-dismissible fade show" id="errorMessage" role="alert">
+				There was an error processing your request. Please contact us directly at (626) 570-5408 or
+				dalinwood@hotmail.com
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
 			<div class="contact-inner">
 				<div class="row">
 					<div class="col-xl-6 col-lg-6 form">
-						<form class="form " action="#" id="contactUsForm">
+						<form class="form" id="contactUsForm" novalidate>
 							<div class="row nogap">
 								<div class="col-md-6 form-group col">
 									<label class="form-label" id="nameLabel" for="name">Your name</label>
 									<input type="text" class="form-control" id="name" name="name" placeholder=""
 										required>
+									<div class="invalid-feedback">
+										Please enter your name
+									</div>
 								</div>
 								<div class="col-md-6 form-group col">
 									<label class="form-label" id="emailLabel" for="email">Your Email</label>
 									<input type="email" class="form-control" id="email" name="email" placeholder=""
 										required>
+									<div class="invalid-feedback">
+										Please enter a valid email address
+									</div>
 								</div>
 							</div>
 
 							<div class="row nogap">
 								<div class="col-md-6 form-group col">
-									<label class="form-label" id="nameLabel" for="name">Your Mobile No. </label>
+									<label class="form-label" id="nameLabel" for="mobileNumber">Your Mobile No. </label>
 									<input type="text" class="form-control" id="mobileNumber" name="mobileNumber"
 										placeholder="" required>
+									<div class="invalid-feedback">
+										Please enter a valid phone number
+									</div>
 								</div>
 							</div>
 
@@ -597,7 +621,13 @@
 								<label class="form-label" id="messageLabel" for="message">Your Message</label>
 								<textarea rows="6" cols="60" name="message" class="form-control" id="message"
 									placeholder="" required></textarea>
+								<div class="invalid-feedback">
+									Please enter your message
+								</div>
 							</div>
+
+
+							<div class="g-recaptcha" data-sitekey="6LdmRvcZAAAAADZ17nnUpUyvdQvvQdi3EjxJbN81"></div>
 
 							<div class=" float-right">
 								<button id="submitContactUsForm" type="button"
@@ -694,6 +724,7 @@
 	<script src="js/owl.carousel.js"></script>
 	<script src="js/aos.js"></script>
 	<script src="js/custom.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<!-- Modal -->
 	<div class="modal fade" id="brochureModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-xl">
@@ -738,6 +769,8 @@
 	//Init
 	$("#messageSuccess").hide();
 	$("#errorMessage").hide();
+	$("#validationError").hide();
+	$("#solveCaptchaError").hide();
 
 	function getFormData($form) {
 		var unindexed_array = $form.serializeArray();
@@ -767,18 +800,30 @@
 	}
 
 	$("#submitContactUsForm").on('click', async function () {
-		let contactUsForm = $("#contactUsForm");
-		let data = getFormData(contactUsForm);
+		let captchaResponse = grecaptcha.getResponse();
+		let form = document.getElementById('contactUsForm');
 
-		let response = await sendEmail(data);
-
-		if (response.status === 200) {
-			// Handle success
-			$("#messageSuccess").fadeIn();
+		if (captchaResponse === "") {
+			$("#solveCaptchaError").fadeIn();
+		} else if (form.checkValidity() === false) {
+			form.classList.add('was-validated');
+			$("#validationError").fadeIn();
 		} else {
-			// Handle error
-			$("#errorMessage").fadeIn();
+			$("#errorMessage").hide();
+			$("#solveCaptchaError").hide();
+			$("#validationError").hide();
+			let contactUsForm = $("#contactUsForm");
+			let data = getFormData(contactUsForm);
+
+			let response = await sendEmail(data);
+
+			if (response.status === 200) {
+				// Handle success
+				$("#messageSuccess").fadeIn();
+			} else {
+				// Handle error
+				$("#errorMessage").fadeIn();
+			}
 		}
 	});
-
 </script>

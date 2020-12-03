@@ -1050,7 +1050,9 @@ footer .fa-arrow-up:hover {
 	font-size: 30px;
 }
 
-
+input:invalid {
+	border: 2px red;
+}
 
 
 /*==================
