@@ -820,10 +820,13 @@
 			if (response.status === 200) {
 				// Handle success
 				$("#messageSuccess").fadeIn();
+				document.getElementById("contactUsForm").reset();
 			} else {
 				// Handle error
 				$("#errorMessage").fadeIn();
 			}
+			
+			grecaptcha.reset();
 		}
 	});
 </script>
