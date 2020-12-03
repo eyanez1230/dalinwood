@@ -562,15 +562,8 @@
 				</button>
 			</div>
 
-			<div class="alert alert-danger alert-dismissible fade show" id="solveCaptchaError" role="alert">
-				Please solve the captcha
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-
 			<div class="alert alert-danger alert-dismissible fade show" id="validationError" role="alert">
-				Please address the validation errors
+				Please ensure that all fields are filled in.
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -770,7 +763,6 @@
 	$("#messageSuccess").hide();
 	$("#errorMessage").hide();
 	$("#validationError").hide();
-	$("#solveCaptchaError").hide();
 
 	function getFormData($form) {
 		var unindexed_array = $form.serializeArray();
@@ -803,18 +795,11 @@
 		let captchaResponse = grecaptcha.getResponse();
 		let form = document.getElementById('contactUsForm');
 
-		if (captchaResponse === "") {
-			$("#solveCaptchaError").fadeIn();
-		}
-
-		if (form.checkValidity() === false) {
+		if (form.checkValidity() === false || captchaResponse === "") {
 			form.classList.add('was-validated');
 			$("#validationError").fadeIn();
-		} 
-		
-		if (form.checkValidity() === true && captchaResponse !== "") {
+		} else {
 			$("#errorMessage").hide();
-			$("#solveCaptchaError").hide();
 			$("#validationError").hide();
 			let contactUsForm = $("#contactUsForm");
 			let data = getFormData(contactUsForm);
