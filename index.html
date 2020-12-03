@@ -805,10 +805,14 @@
 
 		if (captchaResponse === "") {
 			$("#solveCaptchaError").fadeIn();
-		} else if (form.checkValidity() === false) {
+		}
+
+		if (form.checkValidity() === false) {
 			form.classList.add('was-validated');
 			$("#validationError").fadeIn();
-		} else {
+		} 
+		
+		if (form.checkValidity() === true && captchaResponse !== "") {
 			$("#errorMessage").hide();
 			$("#solveCaptchaError").hide();
 			$("#validationError").hide();
@@ -825,7 +829,7 @@
 				// Handle error
 				$("#errorMessage").fadeIn();
 			}
-			
+
 			grecaptcha.reset();
 		}
 	});
