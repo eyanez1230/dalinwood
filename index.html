@@ -685,7 +685,7 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="footer-inner">
-						<ul class="navbar-nav">
+						<ul class="navbar-nav pull-right">
 							<li>
 								<a href="index.html">Home </a>
 							</li>
@@ -710,6 +710,9 @@
 								<span style="color: #4d8d35">English: (626) 476-7616 | Chinese: (626) 255-8281</span>
 							</li>
 						</ul>
+						<div class="content" style="margin-top: 10px;">
+							Copyright &copy; <var id="year" style="font-style:normal;"></var> Dalinwood Inc.
+						</div>
 						<!-- <p>Designed and developed by <small><a href="https://www.template.net/editable/construction-website-templates">Template.net</a></small></p> -->
 					</div>
 				</div>
@@ -768,6 +771,8 @@
 </html>
 
 <script>
+	let date = new Date();
+	$("#year").text(date.getFullYear());
 	//Init
 	$("#messageSuccess").hide();
 	$("#errorMessage").hide();
