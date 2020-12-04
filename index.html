@@ -818,6 +818,7 @@
 	}
 
 	$("#submitContactUsForm").on('click', async function () {
+		grecaptcha.execute();
 		let captchaResponse = grecaptcha.getResponse();
 		let form = document.getElementById('contactUsForm');
 
