@@ -621,7 +621,9 @@
 								</div>
 							</div>
 
-							<button class="g-recaptcha btn btn-mod btn-border btn-large" data-sitekey="6LfluvgZAAAAAN4nTozq9VKOiLciW1eU-SfKINf7" id="submitContactUsForm" data-callback='onSubmit'>Submit</button>
+							<button class="g-recaptcha btn btn-mod btn-border btn-large"
+								data-sitekey="6LfluvgZAAAAAN4nTozq9VKOiLciW1eU-SfKINf7" id="submitContactUsForm"
+								data-callback='onSubmit'>Submit</button>
 
 							<!-- <div class="row float-right">
 								<div class="col-md-2 form-group col">
@@ -782,7 +784,21 @@
 
 </html>
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-305CEHJSDY"></script>
+
 <script>
+	/**
+	* Start google analytics
+	**/
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'G-305CEHJSDY');
+	/**
+	* End google analytics
+	**/
+
 	let date = new Date();
 	$("#year").text(date.getFullYear());
 	//Init
