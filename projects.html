@@ -185,34 +185,36 @@
         projects: [{
             directory: "bar",
             mainImage: "main.jpg",
-            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"]
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
         }, {
-            directory: "office",
+            directory: "bank",
             mainImage: "main.jpg",
-            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"]
+            subImages: ["sub-01.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
         }, {
-            directory: "test1",
+            directory: "closet",
             mainImage: "main.jpg",
-            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"]
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
         }, {
-            directory: "test2",
+            directory: "kitchen",
             mainImage: "main.jpg",
-            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"]
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
         }, {
-            directory: "test3",
+            directory: "kitchen2",
             mainImage: "main.jpg",
-            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"]
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
         }, {
-            directory: "test4",
+            directory: "lobby",
             mainImage: "main.jpg",
-            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"]
-        }, {
-            directory: "test5",
-            mainImage: "main.jpg",
-            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"]
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
         }]
-
     }
+
     let mainImageName = "main.jpg";
     let projectSubImages = ['sub-01.jpg', 'sub-02.jpg', 'sub-03.jpg'];
     let maxColumns = 4;
@@ -234,16 +236,20 @@
     });
 
     $(".projectImageLink").click(function() {
+        // Clear previous content
+        carouselIndicators.html("");
+        carouselContent.html("");
+
         let id = $(this).attr('id');
 
         let directory = individualProjectFolderName.projects[id].directory;
         let subImages = individualProjectFolderName.projects[id].subImages;
+        let miniDescription = individualProjectFolderName.projects[id].miniDescription;
 
         subImages.forEach((image, index) => {
-            console.log(image);
             if (index === 0) {
                 carouselIndicators.append(`<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>`);
-                carouselContent.append(`<div class="carousel-item active"><img class="d-block w-100" src="images/projects/${directory}/${image}" alt="First slide"></div>`)
+                carouselContent.append(`<div class="carousel-item active"><img class="d-block w-100" src="images/projects/${directory}/${image}" alt="First slide"><div class="carouselDescription"><h3>${miniDescription}</h3></div></div>`)
             } else {
                 carouselIndicators.append(`<li data-target="#carouselExampleIndicators" data-slide-to="${index}"></li>`);
                 carouselContent.append(`<div class="carousel-item"><img class="d-block w-100" src="images/projects/${directory}/${image}" alt="First slide"></div>`)
