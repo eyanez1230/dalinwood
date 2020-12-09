@@ -94,8 +94,8 @@
     </section>
 
     <section class="projects">
-        <div class="row" id="0-row">
-        </div>
+        <div class="row" id="0-row"></div>
+        <div class="row" id="1-row"></div>
     </section>
 
     <!-- footer start -->
@@ -208,6 +208,36 @@
             subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
             miniDescription: "Some Restaurant Napa, California"
         }, {
+            directory: "kitchen3",
+            mainImage: "main.jpg",
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
+        }, {
+            directory: "kitchen4",
+            mainImage: "main.jpg",
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
+        }, {
+            directory: "kitchen5",
+            mainImage: "main.jpg",
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
+        }, {
+            directory: "kitchen6",
+            mainImage: "main.jpg",
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
+        }, {
+            directory: "kitchen7",
+            mainImage: "main.jpg",
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
+        }, {
+            directory: "kitchen8",
+            mainImage: "main.jpg",
+            subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
+            miniDescription: "Some Restaurant Napa, California"
+        }, {
             directory: "lobby",
             mainImage: "main.jpg",
             subImages: ["sub-01.jpg", "sub-02.jpg", "sub-03.jpg"],
@@ -228,10 +258,10 @@
     let carouselIndicators = $(".carousel-indicators");
 
     individualProjectFolderName.projects.forEach((project, index) => {
-        if (firstRow.find('div.projectColumn').length <= 6) {
+        if (firstRow.find('div.projectColumn').length < 6) {
             firstRow.append(`<div class="col-xl-2 col-lg-2 col-md-2 projectColumn"><a href="#" data-target="#projectDetailsModal" data-toggle="modal" class="projectImageLink" id="${index}"><img class="project" src="images/projects/${project.directory}/${project.mainImage}"/></a></div>`);
-        } else if (secondRow.find('div.projectColumn').length <= 6) {
-            secondRow.append(`<div class="col-xl-2 col-lg-2 col-md-2 projectColumn"><a href="#" data-target="#projectDetailsModal" data-toggle="modal"><img class="project" src="images/projects/${project.directory}/${project.mainImage}"/></a></div>`);
+        } else {
+            secondRow.append(`<div class="col-xl-2 col-lg-2 col-md-2 projectColumn"><a href="#" data-target="#projectDetailsModal" data-toggle="modal" class="projectImageLink" id="${index}"><img class="project" src="images/projects/${project.directory}/${project.mainImage}"/></a></div>`);
         }
     });
 
