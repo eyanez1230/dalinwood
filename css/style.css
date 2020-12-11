@@ -166,7 +166,7 @@ header .navbar .nav-item .nav-link:hover {
 /*-- banner start --*/
 
 .projectsBanner {
-    padding-top: 150px;
+    padding-top: 50px;
 }
 
 .projectsBanner h1 {
@@ -203,6 +203,36 @@ header .navbar .nav-item .nav-link:hover {
 
 
 /*-- banner start --*/
+
+.projectsBanner {
+    background-image: url('../images/bathroom_room_style_interior_70186_1920x1080.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.projectsBanner .gradient {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #000000;
+    opacity: 0.14;
+}
+
+.projectsBanner .banner-inner {
+    padding-top: 251px;
+    padding-bottom: 365px;
+}
+
+.projectsBanner .banner-inner h1 {
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: bold;
+    width: 95%;
+    margin-left: 6px;
+}
 
 .banner {
     background-image: url('../images/banner.jpg');
@@ -498,6 +528,96 @@ header .navbar .nav-item .nav-link:hover {
 
 
 /*-- services end --*/
+
+
+
+.completed-projects {
+    margin-bottom: 80px;
+}
+
+.completed-projects .client-top {
+    width: 710px;
+    margin-bottom: 0;
+}
+
+.completed-projects .client-top h2 {
+    font-size: 40px;
+    color: #000000;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.completed-projects .client-top p {
+    font-size: 18px;
+    line-height: 32px;
+    color: #000000;
+    opacity: 0.8;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.completed-projects-inner {
+    display: flex;
+}
+
+.completed-projects .completed-projects-inner p {
+    font-size: 21px;
+    line-height: 36px;
+    color: #000000;
+    opacity: 0.8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    margin-bottom: 17px;
+}
+
+.completed-projects .completed-projects-inner h5 {
+    font-size: 20px;
+    color: #4d8d35;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.completed-projects .completed-projects-inner .inner-box {
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px 4px rgba(235, 235, 235, 0.77);
+    -moz-box-shadow: 0px 0px 8px 4px rgba(235, 235, 235, 0.77);
+    -webkit-box-shadow: 0px 0px 8px 4px rgba(235, 235, 235, 0.77);
+    padding: 30px 70px 65px;
+    position: relative;
+}
+
+.completed-projects .completed-projects-inner .inner-box figure {
+    margin-left: -48px;
+}
+
+.completed-projects .completed-projects-inner .block {
+    /* 	width: 430px;*/
+    height: 100%;
+    padding-bottom: 0;
+    margin-left: -13px;
+    /* 	padding: 30px 20px 65px 55px;*/
+    position: absolute;
+    z-index: 1;
+}
+
+.completed-projects .nogap>.col {
+    padding: 0;
+    width: 500px;
+}
+
+.completed-projects .nogap>.col:first-child {
+    padding-left: 0;
+}
+
+.completed-projects .nogap>.col:last-child {
+    padding-right: 0;
+}
+
+.completed-projects .client-testimonials-inner:last-child .inner-box {
+    margin-left: -15px;
+}
+
+
 
 
 /*-- client-testimonials start --*/
