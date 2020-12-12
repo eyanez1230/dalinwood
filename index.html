@@ -553,9 +553,10 @@
         return response;
     }
 
-    $("#submitContactUsForm").on('click', async function() {
+    function obSubmit() {
         grecaptcha.execute();
         let captchaResponse = grecaptcha.getResponse();
+        console.log(captchaResponse);
         let form = document.getElementById('contactUsForm');
 
         if (form.checkValidity() === false || captchaResponse === "") {
@@ -580,7 +581,7 @@
 
             grecaptcha.reset();
         }
-    });
+    }
 
 
 
