@@ -553,7 +553,7 @@
         return response;
     }
 
-    function onSubmit() {
+    async function onSubmit() {
         grecaptcha.execute();
         let captchaResponse = grecaptcha.getResponse();
         console.log(captchaResponse);
