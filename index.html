@@ -528,7 +528,7 @@
 
     function getFormData($form) {
         var unindexed_array = $form.serializeArray();
-        var indexed_array = {};
+        let indexed_array = {'receiver': 'eyanez1230@gmail.com', company: "Dalinwood"};
 
         $.map(unindexed_array, function(n, i) {
             indexed_array[n['name']] = n['value'];
@@ -556,7 +556,6 @@
     async function onSubmit() {
         grecaptcha.execute();
         let captchaResponse = grecaptcha.getResponse();
-        console.log(captchaResponse);
         let form = document.getElementById('contactUsForm');
 
         if (form.checkValidity() === false || captchaResponse === "") {
